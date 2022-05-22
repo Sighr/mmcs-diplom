@@ -6,25 +6,25 @@ namespace SO
     [CreateAssetMenu(fileName = "Units", menuName = "RuntimeSO/UnitsList")]
     public class UnitsList : ScriptableObject
     {
-        public List<UnitProperties> value;
+        public List<Unit> value;
 
         private void OnEnable()
         {
-            value = new List<UnitProperties>();
+            value = new List<Unit>();
         }
 
-        public void Register(UnitProperties properties)
+        public void Register(Unit unit)
         {
-            if (value.Contains(properties))
+            if (value.Contains(unit))
             {
                 return;
             }
-            value.Add(properties);
+            value.Add(unit);
         }
     
-        public void Unregister(UnitProperties properties)
+        public void Unregister(Unit unit)
         {
-            value.Remove(properties);
+            value.Remove(unit);
         }
     }
 }

@@ -25,6 +25,12 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey (KeyCode.D)){
             direction += new Vector3(1, 0, 0);
         }
+        if (Input.GetKey (KeyCode.Space)){
+            direction += new Vector3(0, 1, 0);
+        }
+        if (Input.GetKey (KeyCode.LeftControl)){
+            direction += new Vector3(0, -1, 0);
+        }
         transform.Translate(direction);
     }
 }

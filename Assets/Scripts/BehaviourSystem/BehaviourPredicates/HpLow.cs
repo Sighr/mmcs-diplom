@@ -5,9 +5,9 @@ namespace BehaviourSystem.BehaviourPredicates
     {
         public float threshold;
     
-        public bool ShouldBeApplied(UnitProperties properties)
+        public bool ShouldBeApplied(Unit unit)
         {
-            return properties.hp < threshold;
+            return unit.hp < threshold;
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using BehaviourSystem.Entities;
+﻿using BehaviourSystem.Entities;
 using UnityEngine;
 
 namespace BehaviourSystem.Behaviours
@@ -8,7 +7,7 @@ namespace BehaviourSystem.Behaviours
     {
         public IBaseEntitiesList Entities;
 
-        protected Vector3 GetNearest(UnitProperties properties)
+        protected Vector3 GetNearest(Unit properties)
         {
             return EntitiesUtils.GetNearest(properties, Entities.GetAllEntities(properties));
         }

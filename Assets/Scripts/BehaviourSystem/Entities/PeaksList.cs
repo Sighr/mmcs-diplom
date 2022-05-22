@@ -6,7 +6,9 @@ namespace BehaviourSystem.Entities
 {
     public class PeaksList : IBaseEntitiesList
     {
-        public IEnumerable<Vector3> GetAllEntities(UnitProperties properties)
+        public static readonly PeaksList Instance = new();
+
+        public IEnumerable<Vector3> GetAllEntities(Unit unit)
         {
             // TODO: implement
             throw new NotImplementedException();

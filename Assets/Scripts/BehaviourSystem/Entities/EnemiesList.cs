@@ -7,9 +7,11 @@ namespace BehaviourSystem.Entities
 {
     public class EnemiesList : IBaseEntitiesList
     {
-        public IEnumerable<Vector3> GetAllEntities(UnitProperties properties)
+        public static readonly EnemiesList Instance = new();
+
+        public IEnumerable<Vector3> GetAllEntities(Unit unit)
         {
-            return PlayersUnitsListsUtils.GetEnemies(properties)
+            return PlayersUnitsListsUtils.GetEnemies(unit)
                 .Select(x => x.transform.position);
         }
     }

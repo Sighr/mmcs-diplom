@@ -7,9 +7,9 @@ namespace BehaviourSystem.BehaviourPredicates
     {
         public float threshold;
     
-        public bool ShouldBeApplied(UnitProperties properties)
+        public bool ShouldBeApplied(Unit unit)
         {
-            return PlayersUnitsListsUtils.GetEnemies(properties).Count() < threshold;
+            return PlayersUnitsListsUtils.GetEnemies(unit).Count() < threshold;
         }
     }
 }

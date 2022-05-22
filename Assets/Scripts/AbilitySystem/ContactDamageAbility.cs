@@ -1,27 +1,36 @@
-﻿namespace AbilitySystem
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+namespace AbilitySystem
 {
     public class ContactDamageAbility : CooldownDrivenAbility
     {
         public float damage;
         
-        protected override void ApplyImpl(UnitProperties properties)
+        protected override void ApplyImpl(Unit unit)
         {
-            var collisions = properties.collisionsList.currentCollisionsList;
+            HashSet<GameObject> collisions = unit.components.currentCollisions;
             if (collisions.Count == 0)
             {
+                currentCooldown = 0;
                 return;
             }
 
-            foreach (var collision in collisions)
+            bool applied = false;
+            foreach (GameObject otherGo in collisions)
             {
-                var other = collision.gameObject.GetComponent<UnitProperties>();
-                // TODO: remove for after masked collisions implemented
-                if (other == null)
+                if (otherGo.layer != LayerMask.NameToLayer("Units"))
                 {
                     continue;
                 }
-                // TODO: add damagecomponent, components container in unitproperties and separate system to deal with it
+                Unit other = otherGo.GetComponent<Unit>();
+                // TODO: add damagecomponent and separate system to deal with it
                 other.hp -= damage;
+                applied = true;
+            }
+            if (!applied)
+            {
+                currentCooldown = 0;
             }
         }
     }

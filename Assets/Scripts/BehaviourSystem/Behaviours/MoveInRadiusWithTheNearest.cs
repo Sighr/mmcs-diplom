@@ -6,7 +6,7 @@ namespace BehaviourSystem.Behaviours
     {
         public float Radius;
     
-        protected override BehaviourMovement ApplyImpl(UnitProperties properties)
+        protected override BehaviourMovement ApplyImpl(Unit properties)
         {
             var nearest = GetNearest(properties);
             var position = properties.transform.position;

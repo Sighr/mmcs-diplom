@@ -6,10 +6,12 @@ namespace BehaviourSystem.Entities
 {
     public class AlliesList : IBaseEntitiesList
     {
-        public IEnumerable<Vector3> GetAllEntities(UnitProperties properties)
+        public static readonly AlliesList Instance = new();
+
+        public IEnumerable<Vector3> GetAllEntities(Unit unit)
         {
-            return properties.alliedUnits.value
-                .Where(x => x != properties)
+            return unit.alliedUnits.value
+                .Where(x => x != unit)
                 .Select(x => x.transform.position);
         }
     }

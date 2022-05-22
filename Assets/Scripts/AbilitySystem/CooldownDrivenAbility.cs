@@ -7,7 +7,7 @@ namespace AbilitySystem
         public float baseCooldown;
         public float currentCooldown;
 
-        public void Apply(UnitProperties properties)
+        public void Apply(Unit unit)
         {
             currentCooldown -= Time.fixedDeltaTime;
             if (currentCooldown > 0)
@@ -15,9 +15,9 @@ namespace AbilitySystem
                 return;
             }
             currentCooldown = baseCooldown;
-            ApplyImpl(properties);
+            ApplyImpl(unit);
         }
         
-        protected abstract void ApplyImpl(UnitProperties properties);
+        protected abstract void ApplyImpl(Unit unit);
     }
 }

@@ -7,8 +7,8 @@ namespace BehaviourSystem
     public class BehaviourMovementSystem : MonoBehaviour
     {
         public UnitsList allUnits;
-        private readonly Dictionary<UnitProperties, BehaviourMovement[]> movements = new();
-        private Dictionary<UnitProperties, Rigidbody> unitRbs = new();
+        private readonly Dictionary<Unit, BehaviourMovement[]> movements = new();
+        private Dictionary<Unit, Rigidbody> unitRbs = new();
         private bool _simulating;
 
         public void OnSimulationStart()
@@ -45,7 +45,7 @@ namespace BehaviourSystem
             }
         }
 
-        private void ApplyMovement(UnitProperties unit)
+        private void ApplyMovement(Unit unit)
         {
             var direction = Vector3.zero;
             foreach (var movement in movements[unit])

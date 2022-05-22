@@ -2,7 +2,7 @@
 {
     public class MoveToTheNearest : NearestEntityDrivenBehaviour
     {
-        protected override BehaviourMovement ApplyImpl(UnitProperties properties)
+        protected override BehaviourMovement ApplyImpl(Unit properties)
         {
             var nearest = GetNearest(properties);
             var direction = nearest - properties.transform.position;

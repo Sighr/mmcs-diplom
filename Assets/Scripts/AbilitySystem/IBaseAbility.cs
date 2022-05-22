@@ -2,6 +2,6 @@
 {
     public interface IBaseAbility
     {
-        public void Apply(UnitProperties properties);
+        public void Apply(Unit unit);
     }
 }

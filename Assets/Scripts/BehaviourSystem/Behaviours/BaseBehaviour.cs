@@ -6,13 +6,13 @@ namespace BehaviourSystem.Behaviours
     {
         public IBehaviourPredicate Predicate;
     
-        public BehaviourMovement Apply(UnitProperties properties)
+        public BehaviourMovement Apply(Unit properties)
         {
             if (!Predicate.ShouldBeApplied(properties))
                 return BehaviourMovement.Stay;
             return ApplyImpl(properties);
         }
 
-        protected abstract BehaviourMovement ApplyImpl(UnitProperties properties);
+        protected abstract BehaviourMovement ApplyImpl(Unit properties);
     }
 }

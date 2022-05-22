@@ -5,12 +5,12 @@ namespace BehaviourSystem.Entities
 {
     public interface IBaseEntitiesList
     {
-        public IEnumerable<Vector3> GetAllEntities(UnitProperties properties);
+        public IEnumerable<Vector3> GetAllEntities(Unit unit);
     }
     
     public static class EntitiesUtils
     {
-        public static Vector3 GetNearest(UnitProperties properties, IEnumerable<Vector3> positions)
+        public static Vector3 GetNearest(Unit properties, IEnumerable<Vector3> positions)
         {
             float minDistance = float.MaxValue;
             Vector3 nearest = Vector3.zero;

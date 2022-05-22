@@ -28,7 +28,7 @@ namespace SO
 
     public static class PlayersUnitsListsUtils
     {
-        public static IEnumerable<UnitProperties> GetEnemies(UnitProperties properties)
+        public static IEnumerable<Unit> GetEnemies(Unit properties)
         {
             return properties.playersUnits.value
                 .Where(kvp => kvp.Key != properties.owner)

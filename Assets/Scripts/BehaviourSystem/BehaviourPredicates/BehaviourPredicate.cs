@@ -2,6 +2,6 @@
 {
     public interface IBehaviourPredicate
     {
-        public bool ShouldBeApplied(UnitProperties properties);
+        public bool ShouldBeApplied(Unit unit);
     }
 }
