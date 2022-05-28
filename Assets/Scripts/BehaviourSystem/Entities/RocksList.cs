@@ -13,5 +13,10 @@ namespace BehaviourSystem.Entities
             // TODO: implement
             throw new NotImplementedException();
         }
+
+        public string GetDescription()
+        {
+            return "Rocks";
+        }
     }
 }

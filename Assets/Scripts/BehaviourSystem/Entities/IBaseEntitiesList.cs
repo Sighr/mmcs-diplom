@@ -6,6 +6,7 @@ namespace BehaviourSystem.Entities
     public interface IBaseEntitiesList
     {
         public IEnumerable<Vector3> GetAllEntities(Unit unit);
+        public string GetDescription();
     }
     
     public static class EntitiesUtils

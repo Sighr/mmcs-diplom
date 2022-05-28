@@ -17,7 +17,9 @@ namespace AbilitySystem
             currentCooldown = baseCooldown;
             ApplyImpl(unit);
         }
-        
+
+        public abstract string GetDescription();
+
         protected abstract void ApplyImpl(Unit unit);
     }
 }

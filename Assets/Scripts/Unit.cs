@@ -45,7 +45,7 @@ public class Unit : MonoBehaviour
         var behaviour = new MoveToTheNearest
         {
             Predicate = Always.Instance,
-            Entities = EnemiesList.Instance
+            entities = EnemiesList.Instance
         };
         behaviours.Add(behaviour);
     }
@@ -54,11 +54,13 @@ public class Unit : MonoBehaviour
     public void SetRadiusBehaviour()
     {
         var behaviour = new MoveInRadiusWithTheNearest();
-        var behaviourPredicate = new AlliesLess();
-        behaviourPredicate.threshold = 1;
+        var behaviourPredicate = new AlliesLess
+        {
+            threshold = 1
+        };
         behaviour.Predicate = behaviourPredicate;
-        behaviour.Radius = 50;
-        behaviour.Entities = AlliesList.Instance;
+        behaviour.radius = 50;
+        behaviour.entities = AlliesList.Instance;
         behaviours.Add(behaviour);
     }
     
@@ -68,7 +70,7 @@ public class Unit : MonoBehaviour
         var behaviour = new MoveAwayFromTheNearest
         {
             Predicate = Always.Instance,
-            Entities = EnemiesList.Instance
+            entities = EnemiesList.Instance
         };
         behaviours.Add(behaviour);
     }
@@ -98,6 +100,14 @@ public class Unit : MonoBehaviour
         abilities.Add(ability);
     }
     
+    [ContextMenu("LogBehaviours")]
+    public void LogBehaviours()
+    {
+        foreach (var behaviour in behaviours)
+        {
+            Debug.Log(behaviour);
+        }
+    }
     
     #endregion
 }

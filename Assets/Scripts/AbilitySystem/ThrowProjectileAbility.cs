@@ -6,7 +6,12 @@ namespace AbilitySystem
     public class ThrowProjectileAbility : CooldownDrivenAbility
     {
         public GameObject projectilePrefab;
-        
+
+        public override string GetDescription()
+        {
+            return $"ThrowProjectileAbility,CD{currentCooldown}/{baseCooldown},P{projectilePrefab}";
+        }
+
         protected override void ApplyImpl(Unit unit)
         {
             Vector3 target = EntitiesUtils.GetNearest(unit, EnemiesList.Instance.GetAllEntities(unit));

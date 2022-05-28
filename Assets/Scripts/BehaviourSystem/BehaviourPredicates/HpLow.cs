@@ -9,5 +9,10 @@ namespace BehaviourSystem.BehaviourPredicates
         {
             return unit.hp < threshold;
         }
+
+        public string GetDescription()
+        {
+            return $"HpLessThan{threshold}";
+        }
     }
 }

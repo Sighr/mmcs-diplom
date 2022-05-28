@@ -1,12 +1,26 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     public float sensitivity = 0.25f;
+    public float speed = 0.7f;
+    public GameObject lockedCursor;
+
+    private void OnEnable()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        lockedCursor.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        lockedCursor.SetActive(false);
+    }
 
     private void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         float dx = Input.GetAxis("Mouse X");
         float dy = Input.GetAxis("Mouse Y");
         var eulerAngles = transform.eulerAngles;
@@ -31,6 +45,6 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey (KeyCode.LeftControl)){
             direction += new Vector3(0, -1, 0);
         }
-        transform.Translate(direction);
+        transform.Translate(direction * speed);
     }
 }

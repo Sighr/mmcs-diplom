@@ -9,5 +9,10 @@ namespace BehaviourSystem.BehaviourPredicates
         {
             return unit.alliedUnits.value.Count < threshold;
         }
+
+        public string GetDescription()
+        {
+            return $"AlliesLessThan{threshold}";
+        }
     }
 }

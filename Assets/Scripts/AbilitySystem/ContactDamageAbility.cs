@@ -6,7 +6,12 @@ namespace AbilitySystem
     public class ContactDamageAbility : CooldownDrivenAbility
     {
         public float damage;
-        
+
+        public override string GetDescription()
+        {
+            return $"ContactDamageAbility,CD{currentCooldown}/{baseCooldown},DMG{damage}";
+        }
+
         protected override void ApplyImpl(Unit unit)
         {
             HashSet<GameObject> collisions = unit.components.currentCollisions;

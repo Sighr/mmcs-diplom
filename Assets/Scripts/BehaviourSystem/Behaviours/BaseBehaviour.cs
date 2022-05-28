@@ -14,5 +14,6 @@ namespace BehaviourSystem.Behaviours
         }
 
         protected abstract BehaviourMovement ApplyImpl(Unit properties);
+        public abstract string GetDescription();
     }
 }

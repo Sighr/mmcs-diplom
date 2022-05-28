@@ -8,5 +8,10 @@ namespace BehaviourSystem.BehaviourPredicates
         {
             return true;
         }
+
+        public string GetDescription()
+        {
+            return "Always";
+        }
     }
 }

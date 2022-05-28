@@ -14,5 +14,10 @@ namespace BehaviourSystem.Entities
             return PlayersUnitsListsUtils.GetEnemies(unit)
                 .Select(x => x.transform.position);
         }
+
+        public string GetDescription()
+        {
+            return "Enemies";
+        }
     }
 }

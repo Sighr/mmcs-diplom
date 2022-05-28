@@ -11,5 +11,10 @@ namespace BehaviourSystem.BehaviourPredicates
         {
             return PlayersUnitsListsUtils.GetEnemies(unit).Count() < threshold;
         }
+
+        public string GetDescription()
+        {
+            return $"EnemiesLessThan{threshold}";
+        }
     }
 }

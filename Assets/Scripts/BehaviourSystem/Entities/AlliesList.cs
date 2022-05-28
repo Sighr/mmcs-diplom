@@ -14,5 +14,10 @@ namespace BehaviourSystem.Entities
                 .Where(x => x != unit)
                 .Select(x => x.transform.position);
         }
+
+        public string GetDescription()
+        {
+            return "Allies";
+        }
     }
 }
