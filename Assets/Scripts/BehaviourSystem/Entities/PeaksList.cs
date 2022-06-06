@@ -16,7 +16,7 @@ namespace BehaviourSystem.Entities
 
         public string GetDescription()
         {
-            return "Peaks";
+            return "Peak";
         }
     }
 }

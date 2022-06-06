@@ -17,7 +17,7 @@ namespace BehaviourSystem.Entities
 
         public string GetDescription()
         {
-            return "Enemies";
+            return "Enemy";
         }
     }
 }
